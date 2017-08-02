@@ -1,3 +1,6 @@
 [submodule "scripts/ansible"]
 	path = scripts/ansible
 	url = git@github.com:todd-dsm/ansible-scratch.git
+[submodule "scripts/aws-tools"]
+	path = scripts/aws-tools
+	url = git@github.com:todd-dsm/aws-tools.git
