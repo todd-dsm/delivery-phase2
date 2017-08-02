@@ -1,0 +1,44 @@
+{
+  "variables": {
+    "requestor": "{{env `AWS_PROFILE`}}",
+    "distro_admin": "admin"
+  },
+  "builders": [{
+    "type": "amazon-ebs",
+    "instance_type": "t2.micro",
+    "ami_name": "{{user `amiName`}}",
+    "region": "{{user `myAWSRegion`}}",
+    "ssh_username": "{{user `distro_admin`}}",
+    "force_deregister": true,
+    "source_ami_filter": {
+      "filters": {
+        "name": "debian-jessie-amd64*",
+        "architecture": "x86_64",
+        "virtualization-type": "hvm",
+        "root-device-type": "ebs"
+      },
+      "owners": ["379101102735"],
+      "most_recent": true
+    },
+    "tags": {
+      "env":      "dev",
+      "os":       "debian",
+      "Platform": "Linux",
+      "vers":     "8.6",
+      "cname":    "jessie",
+      "rel":      "ga",
+      "provr":    "ansible",
+      "tech":     "{{user `requestor`}}",
+      "Name":     "{{user `amiName`}}"
+    }
+  }],
+  "provisioners": [
+    {
+    "type": "ansible",
+    "user": "{{user `distro_admin`}}",
+    "playbook_file": "scripts/accelerate.yml",
+    "extra_arguments": [ "-v" ],
+    "ansible_env_vars": [ "ANSIBLE_HOST_KEY_CHECKING=False" ]
+    }
+  ]
+}
