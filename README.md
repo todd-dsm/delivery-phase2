@@ -1,7 +1,7 @@
-# delivery-phase1
+# delivery-phase2
 The evolution of a process: phase 1: the operating system
 
-Phase 1 is about making a safe home for containers in the form of a Amazon AMI. 
+Phase 2 is about making a safe home for containers in the form of a Amazon AMI. 
 
 ## Some Setup
 Before starting, use homebrew to install packer: `brew install packer packer-completion`
