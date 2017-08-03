@@ -1,7 +1,7 @@
 # delivery-phase2
-The evolution of a process: phase 1: the operating system
+The evolution of a process: phase 2: the operating system. This is all about making a safe home for containers in the form of a Amazon AMI. Pull the repo:
 
-Phase 2 is about making a safe home for containers in the form of a Amazon AMI. 
+`git clone --recursive -j3 git@github.com:todd-dsm/delivery-phase2.git phase2`
 
 ## Some Setup
 Before starting, use homebrew to install packer: `brew install packer packer-completion`
